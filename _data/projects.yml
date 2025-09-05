@@ -1,0 +1,22 @@
+- title: "LLM Retrieval-Augmented Chatbot for BPM Microsystems"
+  blurb: "Production RAG service with vector search, MCP protocol integration, 20+ tools and Salesforce deployment."
+  chips: ["Python", "PyTorch", "FAISS", "Docker"]
+  links:
+    - { label: "Code", href: "https://github.com/jackthetoga" }
+    - { label: "Demo", href: "https://jackthetoga.github.io/projects/rag.html" }
+    - { label: "Write-up", href: "/projects/rag.html" }
+
+- title: "C Shell written with lex, yacc and C++"
+  blurb: "Supports piping, input/output redirection, shell scripting and other core features."
+  chips: ["C/C++", "lex", "yacc", "Shell"]
+  links:
+    - { label: "Code", href: "https://github.com/jackthetoga" }
+    - { label: "Write-up", href: "/projects/shell.html" }
+
+- title: "Systems: Lock-Free Queue"
+  blurb: "Multi-producer/multi-consumer ring buffer in C with benchmarks vs. mutexes."
+  chips: ["C", "Concurrency", "Perf"]
+  links:
+    - { label: "Code", href: "https://github.com/jackthetoga/lockfree-queue" }
+    - { label: "Write-up", href: "/projects/lockfree.html" }
+
