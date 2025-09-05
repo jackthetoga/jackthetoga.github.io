@@ -1,0 +1,24 @@
+title: "Jack White — CS & AI Portfolio"
+description: "Projects and resume for Jack White: Computer Science, AI/ML, systems, and tooling."
+url: "https://jackthetoga.github.io"   # IMPORTANT: keep exactly this for a user site
+author:
+  name: "Jack White"
+  email: "white942@purdue.edu"
+
+# Socials (used by jekyll-seo-tag if present)
+social:
+  links:
+    - https://github.com/jackthetoga
+    - https://www.linkedin.com/in/zizizink
+
+# Open Graph / Twitter image (leave at repo root or adjust path if you move it)
+image: /og-image.png
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Build settings (no theme; we use your custom layout + CSS)
+markdown: kramdown
+

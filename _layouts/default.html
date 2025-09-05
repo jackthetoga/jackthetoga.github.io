@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  {%- comment -%}
+  jekyll-seo-tag generates: <title>, canonical, meta description, Open Graph, Twitter cards, JSON-LD, etc.
+  It uses site.title, site.description, site.url, page.title, and site.image from _config.yml.
+  {%- endcomment -%}
+  {%- seo -%}
+
+  <!-- Minimal, responsive CSS (dark-mode aware) -->
+  <style>
+    :root {
+      --bg:#ffffff; --fg:#111; --muted:#555; --link:#0b5fff; --chip:#eef2ff; --chipfg:#223;
+      --border:#e5e7eb; --cardbg:#fff; --shadow:0 2px 12px rgba(0,0,0,.06);
+      --maxw:1040px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0b0d10; --fg:#e6e6e6; --muted:#a3a3a3; --link:#7aa2ff; --chip:#1a2333; --chipfg:#cfd8ff; --border:#20242c; --cardbg:#0f141a;}
+    }
+    * { box-sizing:border-box; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; }
+    a { color:var(--link); text-decoration:none; }
+    a:hover, a:focus { text-decoration:underline; }
+    .wrap { max-width:var(--maxw); margin:0 auto; padding:24px; }
+    header { border-bottom:1px solid var(--border); }
+    .headerbar { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .avatar { width:44px; height:44px; border-radius:999px; object-fit:cover; border:1px solid var(--border); }
+    nav { display:flex; gap:16px; align-items:center; justify-content:flex-end; }
+    .hero { display:grid; gap:8px; padding:32px 0 8px; }
+    .hero h1 { font-size:clamp(28px,4vw,40px); margin:0; }
+    .hero p { margin:0; color:var(--muted); }
+    .links { display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
+    .links a { padding:6px 10px; border:1px solid var(--border); border-radius:8px; }
+    h2 { margin:32px 0 12px; font-size:clamp(22px,3vw,28px); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+    .card { background:var(--cardbg); border:1px solid var(--border); border-radius:12px; padding:16px; box-shadow:var(--shadow); display:flex; flex-direction:column; }
+    .card h3 { margin:0 0 6px; font-size:18px; }
+    .card p { margin:0 0 8px; color:var(--muted); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 12px; }
+    .chip { background:var(--chip); color:var(--chipfg); padding:4px 8px; border-radius:999px; font-size:12px; }
+    .card .actions { margin-top:auto; display:flex; gap:10px; }
+    .resume { border:1px solid var(--border); border-radius:12px; padding:16px; display:flex; justify-content:space-between; align-items:center; }
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid var(--border); }
+    footer { border-top:1px solid var(--border); margin-top:32px; padding:24px 0; color:var(--muted); }
+    :focus-visible { outline:3px solid #94c6ff; outline-offset:2px; border-radius:6px; }
+    .sr-only { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#content">Skip to content</a>
+  <header>
+    <div class="wrap headerbar">
+      <!-- Headshot lives in the layout so it appears on every page -->
+      <!-- IMPORTANT: put your image at /assets/img/jacktelluride_cropped.jpg exactly -->
+      <img class="avatar" src="/assets/img/jacktelluride_cropped.jpg" alt="Headshot of Jack White">
+
+      <nav aria-label="Site">
+        <a href="/#projects">Projects</a>
+        <a href="/#resume">Resume</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="wrap">
+    {{ content }}
+  </main>
+
+  <footer>
+    <div class="wrap">© {{ "now" | date: "%Y" }} Jack White. Built with Jekyll (GitHub Pages). No trackers.</div>
+  </footer>
+</body>
+</html>
+
