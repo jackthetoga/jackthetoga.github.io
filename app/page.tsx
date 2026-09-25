@@ -1,69 +1,131 @@
 import Image from "next/image";
+import Link from "next/link";
+import hero from "@/public/images/jack-white.jpg";
+import { ContactButtons } from "@/components/ContactButtons";
+import { Feed } from "@/components/Feed";
+import { Handwrite } from "@/components/Handwrite";
+import { JobEntry } from "@/components/JobEntry";
+import { ProjectCard } from "@/components/ProjectCard";
+import { SongCarousel } from "@/components/SongCarousel";
+import { Block, Container } from "@/components/ui";
+import { copy, isWritten } from "@/lib/copy";
+import { featuredProjects, projects } from "@/lib/projects";
+import { experience, favoriteSongs, music, site } from "@/lib/site";
 
 export default function Home() {
+  const featured = featuredProjects();
+  const more = projects.filter((project) => !project.featured);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <Container className="home-standard">
+        <div className="hero">
+          <div className="hero-photo">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src={hero}
+              alt="Jack White standing in a field, with a bridge and hills behind him"
+              placeholder="blur"
+              preload
+              sizes="(min-width: 1024px) 40vw, 100vw"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <div className="hero-text">
+            <p className="hero-kicker">
+              {site.education.school} · CS & AI · {site.education.dates}
+            </p>
+            <h1
+              className="hero-title"
+              data-placeholder={isWritten(copy.headline) ? undefined : ""}
+            >
+              {isWritten(copy.headline) ? copy.headline : site.name}
+            </h1>
+            {!isWritten(copy.headline) && (
+              <Handwrite
+                id="copy-headline"
+                title="Homepage headline"
+                prompt="One or two sentences. Who you are, or how you want to be read. It does not have to cover every project. Until this is filled in, the headline is your name."
+              />
+            )}
+            {isWritten(copy.lede) ? (
+              <p className="hero-lede">{copy.lede}</p>
+            ) : (
+              <Handwrite
+                as="p"
+                id="copy-lede"
+                title="Homepage subline"
+                prompt="A short second line. Facts, interests, or nothing. No need to unify the work into one theme."
+              />
+            )}
+          </div>
         </div>
-      </main>
-    </div>
+
+        <ContactButtons />
+
+        <Block title="Selected work" aside={<Link href="/work">All work</Link>}>
+          <div className="entries">
+            {featured.map((project, index) => (
+              <ProjectCard key={project.slug} project={project} index={index} />
+            ))}
+          </div>
+        </Block>
+
+        <Block title="Experience">
+          <div className="entries">
+            {experience.map((job) => (
+              <JobEntry key={job.org} job={job} />
+            ))}
+          </div>
+        </Block>
+
+        <Block title="Music" aside={<Link href="/music">More on music</Link>}>
+          <div className="music-summary">
+            <div>
+              <p className="label">{music.role}</p>
+              <ul className="band-list">
+                {music.bands.map((band) => (
+                  <li key={band.name}>
+                    <a
+                      href={`https://www.instagram.com/${band.instagram}/`}
+                      className="band-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {band.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {music.shows.map((show) => (
+              <div key={show.title}>
+                <p className="label">{show.date}</p>
+                <p className="entry-title">{show.title}</p>
+                <p className="entry-desc">{show.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="songs-block">
+            <p className="label">Current favorite songs</p>
+            <SongCarousel songs={favoriteSongs} />
+          </div>
+        </Block>
+
+        <Block title="More work">
+          <ul className="compact-list">
+            {more.map((project) => (
+              <li key={project.slug}>
+                <Link href={`/work/${project.slug}`} className="compact-row">
+                  <span className="compact-title">{project.title}</span>{" "}
+                  <span className="compact-meta">{project.year}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Block>
+      </Container>
+      <Container className="home-feed">
+        <Feed />
+      </Container>
+    </>
   );
 }
