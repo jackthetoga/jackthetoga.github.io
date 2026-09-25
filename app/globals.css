@@ -147,7 +147,7 @@
   --body-leading: 1.55;
   --wrap: 76rem;
   --gutter: clamp(1rem, 3vw, 2.5rem);
-  --hero-size: clamp(4rem, 12vw, 10.5rem);
+  --hero-size: clamp(1.75rem, 3.2vw, 2.75rem);
   --h1-size: clamp(3.25rem, 9vw, 7rem);
   --h2-size: clamp(2rem, 4vw, 3rem);
   --h3-size: 1.6rem;
@@ -2389,8 +2389,8 @@ dd {
 
 [data-design="sleeve"] .hero-title {
   margin-top: 1rem;
-  line-height: 0.84;
-  letter-spacing: -0.045em;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
 
 [data-design="sleeve"] .page-title {
