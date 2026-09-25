@@ -8,10 +8,9 @@ import {
   Libre_Caslon_Text,
 } from "next/font/google";
 import localFont from "next/font/local";
-import { DesignSwitcher } from "@/components/DesignSwitcher";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { defaultDesign, designStorageKey, designs } from "@/lib/designs";
+import { defaultDesign } from "@/lib/designs";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -89,10 +88,6 @@ const fontVariables = [plexMono, anton, archivo, inter, jost, caslon, cmu]
   .map((font) => font.variable)
   .join(" ");
 
-const designScript = `try{var d=localStorage.getItem(${JSON.stringify(
-  designStorageKey,
-)});if(${JSON.stringify(designs.map((design) => design.id))}.indexOf(d)>-1)document.documentElement.dataset.design=d}catch(e){}`;
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://jackthetoga.github.io"),
   title: {
@@ -121,12 +116,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-design={defaultDesign}
-      suppressHydrationWarning
       className={fontVariables}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: designScript }} />
-      </head>
       <body>
         <a href="#content" className="skip-link">
           Skip to content
@@ -134,7 +125,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main id="content">{children}</main>
         <Footer />
-        <DesignSwitcher />
       </body>
     </html>
   );

@@ -67,5 +67,5 @@ export const designs: Design[] = [
   },
 ];
 
-export const defaultDesign = designs[0].id;
+export const defaultDesign = "sleeve";
 export const designStorageKey = "site-design";
