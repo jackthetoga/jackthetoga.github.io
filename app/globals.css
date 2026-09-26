@@ -2389,6 +2389,7 @@ dd {
 
 [data-design="sleeve"] .hero-title {
   margin-top: 1rem;
+  text-transform: none;
   line-height: 1.08;
   letter-spacing: -0.025em;
 }

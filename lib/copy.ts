@@ -4,8 +4,8 @@
  */
 export const copy = {
   headline:
-    "I deploy AI systems for task automation and conduct robotics research in the field of imitation learning. I also deploy automatic trading bot experiments trading high volatility small caps.",
-  lede: "I’m also a semiprofessional keyboardist and vocalist with over a hundred shows under my belt. I’m currently in 3 bands.",
+    "I deploy AI systems for task automation and conduct robotics research in the field of imitation learning.",
+  lede: "I also deploy automatic trading bot experiments trading high volatility small caps. I’m also a semiprofessional keyboardist and vocalist with over a hundred shows under my belt. I’m currently in 3 bands.",
   about: [
     "I’m currently a senior at Purdue University studying Computer Science and Artificial Intelligence. I’m looking for work in the Bay Area in software engineering or robotics research. I also enjoy cooking and consider myself a very creative person.",
   ] as string[],
