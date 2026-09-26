@@ -46,7 +46,7 @@ export const feed: FeedPost[] = [
           type: "Research" as const,
           date: xue.dates,
           title: xue.role,
-          body: `${xue.org.replace("Purdue University — ", "With ")}. ${xue.bullets[0]}`,
+          body: `${xue.org.replace("Purdue University, ", "With ")}. ${xue.bullets[0]}`,
         },
       ]
     : []),

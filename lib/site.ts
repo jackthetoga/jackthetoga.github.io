@@ -43,31 +43,31 @@ export const experience: Job[] = [
     dates: "Jul–Aug 2025; May–Aug 2026",
     kind: "work",
     bullets: [
-      "Built AlgoBuilder, an LLM-based agent system that generates and validates NAND/NOR flash programming algorithms. It reached over 80% fully automated completion across more than 40 validated algorithms, saving an estimated 10–15 engineering hours per algorithm.",
-      "Modernized Chip, an internal AI assistant used by about 75% of employees (40–50 people). Connected it to Salesforce and Google Drive through the Model Context Protocol (MCP), added tests, and cut model-call costs.",
-      "Built PDR Builder, a pipeline that turns datasheets and product specs into engineering artifacts, with deterministic validation and human review. It passed 27 of 27 historical Tier-C design validations.",
+      "Built AlgoBuilder, an LLM agent system that generates and validates NAND/NOR flash programming algorithms. It reached over 80% fully automated completion across more than 40 validated algorithms, saving an estimated 10–15 engineering hours per algorithm.",
+      "Modernized Chip, an internal AI assistant used by about 75% of employees (40–50 people). Connected it to Salesforce and Google Drive through the Model Context Protocol (MCP), added tests, and cut the cost of model calls.",
+      "Built PDR Builder, a pipeline that turns datasheets and product specs into engineering artifacts, with deterministic validation and human review. It passed 27 of 27 historical Tier C design validations.",
       "Upgraded the BPWin REST API from 1.2 to 1.9 with job observability, device discovery, remote dialog handling, NAND support, and validation endpoints for unattended automation.",
       "Gave presentations on how to use Chip, AlgoBuilder, and PDR Builder.",
     ],
   },
   {
-    org: "Purdue University — Prof. Yexiang Xue",
-    role: "Robot Learning Research — Zero-Shot & Active Learning",
+    org: "Purdue University, Prof. Yexiang Xue",
+    role: "Robot Learning Research: Zero Shot and Active Learning",
     location: "West Lafayette, IN",
     dates: "Present",
     kind: "research",
     bullets: [
-      "Developing LLM and diffusion-policy methods that generate robot demonstrations without human input, bridging hub-to-hub and hub-to-goal transitions in latent space for zero-shot robot learning.",
+      "Developing methods that use LLMs and diffusion policies to generate robot demonstrations without human input. The demonstrations bridge transitions between hubs, and from hubs to goals, in latent space so a robot can learn new tasks zero shot.",
     ],
   },
   {
-    org: "Purdue University — Prof. Yung-Hsiang Lu",
+    org: "Purdue University, Prof. Yung-Hsiang Lu",
     role: "Computer Vision Research",
     location: "West Lafayette, IN",
     dates: "Aug–Dec 2025",
     kind: "research",
     bullets: [
-      "Implemented computer-vision methods for piano-to-MIDI transcription on the Rach3 and PianoYT datasets, used to evaluate generative music-performance systems.",
+      "Implemented computer vision methods that transcribe piano video into MIDI, tested on the Rach3 and PianoYT datasets and used to evaluate generative systems for music performance.",
     ],
   },
 ];
@@ -79,15 +79,15 @@ export const resumeProjects = [
     subtitle: "Robot Learning and Teleoperation",
     dates: "Apr 2026",
     detail:
-      "Fine-tuned SmolVLA, a vision-language-action model, on 50 teleoperated episodes, raising task success from 0% to about 75%. Integrated Meta Quest/Unity, OpenCV, and a digital twin. Honorable Mention, Best Use of AMD Tech, StarkHacks 2026.",
+      "Trained SmolVLA, a vision language action model, on 50 teleoperated episodes, raising task success from 0% to about 75%. Integrated Meta Quest/Unity, OpenCV, and a digital twin. Honorable Mention, Best Use of AMD Tech, StarkHacks 2026.",
   },
   {
     slug: "slopmop",
     title: "SlopMop",
-    subtitle: "AI-Content Detection Browser Extension",
+    subtitle: "Browser Extension for Detecting AI Content",
     dates: "2026",
     detail:
-      "Implemented the LinkedIn, Facebook, Instagram, X, and Reddit integrations for a browser extension that flags likely AI-generated content. Cut automatic detection time to about 0.6 seconds.",
+      "Implemented the LinkedIn, Facebook, Instagram, X, and Reddit integrations for a browser extension that flags content likely written by AI. Cut automatic detection time to about 0.6 seconds.",
   },
   {
     slug: "tradingsim",
@@ -95,7 +95,7 @@ export const resumeProjects = [
     subtitle: "Market Simulation and Automated Trading",
     dates: "2026",
     detail:
-      "Built an event-driven simulator and an autonomous strategy engine with Level-2 order-book data, latency- and depth-aware fills, risk controls, backtesting, and Interactive Brokers paper trading.",
+      "Built a market simulator and an autonomous strategy engine using Level 2 order book data, with fills that account for latency and depth, risk controls, backtesting, and Interactive Brokers paper trading.",
   },
 ];
 
@@ -137,7 +137,7 @@ export const skills = [
   {
     label: "Engineering / Tools",
     items:
-      "Full-stack software engineering, Linux, Git, Mercurial, Datadog, Unity, GitHub Copilot",
+      "Full stack software engineering, Linux, Git, Mercurial, Datadog, Unity, GitHub Copilot",
   },
   {
     label: "Professional",
